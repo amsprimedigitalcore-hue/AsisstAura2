@@ -23,7 +23,7 @@ const ShopifyServices: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center mb-8">
             <img 
-              src="https://cdn.shopify.com/s/files/1/0070/7032/files/shopify_logo_darkbg.png" 
+              src="https://i.postimg.cc/d09zhSSP/sho.png" 
               alt="Shopify" 
               className="h-16 bg-white px-4 py-2 rounded-lg"
             />
