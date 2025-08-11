@@ -170,7 +170,7 @@ const Header: React.FC = () => {
                     scrollToSection('about');
                     setIsMobileMenuOpen(false);
                   }}
-                  className="block font-anton text-lg text-[#2a3747] hover:text-[#ffbe4a] hover:bg-gray-50 transition-all duration-300 px-6 py-3 rounded-lg mx-4 text-left w-[calc(100%-2rem)]"
+                  className="block font-anton text-lg text-[#2a3747] hover:text-[#ffbe4a] hover:bg-gray-50 transition-all duration-300 px-6 py-3 rounded-lg mx-4 text-left w-full"
                 >
                   About
                 </button>
