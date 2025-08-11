@@ -29,7 +29,7 @@ const MetaAds: React.FC = () => {
           <div className="flex items-center justify-center mb-8">
             <div className="bg-white rounded-lg p-4">
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" 
+                src="https://i.postimg.cc/66ZhhrYx/fa.png" 
                 alt="Meta" 
                 className="h-12 w-12"
               />
