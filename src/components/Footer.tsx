@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     { name: 'Shopify Services', path: '/shopify-services' },
     { name: 'CGI Ads', path: '/cgi-ads' },
     { name: 'Web Development', path: '/web-development' },
-    { name: 'E-commerce Startup', path: '/ecommerce-startup' },
+    { name: 'Meta Ads', path: '/meta-ads' },
     { name: 'Graphic Design', path: '/graphic-design' },
   ];
 
