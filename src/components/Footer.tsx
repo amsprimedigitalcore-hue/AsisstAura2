@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Mail } from 'lucide-react';
+import { Instagram, Facebook, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const services = [
@@ -31,6 +31,14 @@ const Footer: React.FC = () => {
                 className="text-[#ffbe4a] hover:text-[#2a3747] transition-colors duration-300"
               >
                 <Instagram className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.facebook.com/assistaura"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#ffbe4a] hover:text-[#2a3747] transition-colors duration-300"
+              >
+                <Facebook className="w-6 h-6" />
               </a>
             </div>
           </div>
