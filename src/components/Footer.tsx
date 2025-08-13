@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-[#ffbe4a] hover:text-[#2a3747] transition-colors duration-300" />
               <a
-                href="mailto:assistaura9@gmail.com"
+                href="mailto:contact@assistauraofficial.com"
                 className="font-anton text-[#2a3747] hover:text-[#ffbe4a] transition-colors duration-300"
               >
                 contact@assistauraofficial.com
