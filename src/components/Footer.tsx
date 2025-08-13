@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                 href="mailto:assistaura9@gmail.com"
                 className="font-anton text-[#2a3747] hover:text-[#ffbe4a] transition-colors duration-300"
               >
-                assistaura9@gmail.com
+                contact@assistauraofficial.com
               </a>
             </div>
           </div>
