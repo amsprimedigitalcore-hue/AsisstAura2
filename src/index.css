@@ -1,9 +1,9 @@
+/* Import Anton font */
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import Anton font */
-@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap');
 
 * {
   font-family: 'Anton', sans-serif;
