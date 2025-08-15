@@ -50,7 +50,6 @@ function App() {
           <Route path="/admin/*" element={null} />
           <Route path="*" element={<Footer />} />
         </Routes>
-        {/* Chatbot appears on all pages except admin pages */}
         <Routes>
           <Route path="/admin/*" element={null} />
           <Route path="*" element={<ChatWidget />} />

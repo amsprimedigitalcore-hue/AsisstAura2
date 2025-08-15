@@ -107,21 +107,21 @@ const AdminDashboard: React.FC = () => {
     Date: formatDate(lead.created_at)
   }));
 
-  const services = ['Social Media Management', 'Website Development', 'SEO Optimization', 'Content Creation', 'Branding & Graphic Design', 'Digital Advertising Campaigns'];
+  const services = ['CGI Ads', 'Graphic Design', 'Web Development', 'Shopify Services', 'Amazon Services', 'Meta Ads'];
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center font-inter">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-[#ffbe4a] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-[#2a3747]">Loading dashboard...</p>
+          <p className="font-anton text-[#2a3747]">Loading dashboard...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,11 +132,11 @@ const AdminDashboard: React.FC = () => {
                 alt="AssistAura Logo"
                 className="w-10 h-10"
               />
-              <h1 className="text-2xl font-bold text-[#2a3747]">Admin Dashboard</h1>
+              <h1 className="font-anton text-2xl text-[#2a3747]">Admin Dashboard</h1>
             </div>
             <button
               onClick={handleLogout}
-              className="flex items-center space-x-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium"
+              className="flex items-center space-x-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-anton"
             >
               <LogOut className="w-4 h-4" />
               <span>Logout</span>
@@ -158,8 +158,8 @@ const AdminDashboard: React.FC = () => {
                 <Users className="w-6 h-6 text-white" />
               </div>
               <div className="ml-4">
-                <p className="text-sm text-gray-600 font-medium">Total Leads</p>
-                <p className="text-2xl font-bold text-[#2a3747]">{leads.length}</p>
+                <p className="font-anton text-sm text-gray-600">Total Leads</p>
+                <p className="font-anton text-2xl text-[#2a3747]">{leads.length}</p>
               </div>
             </div>
           </motion.div>
@@ -179,8 +179,8 @@ const AdminDashboard: React.FC = () => {
                     <MessageSquare className="w-6 h-6 text-white" />
                   </div>
                   <div className="ml-4">
-                    <p className="text-sm text-gray-600 font-medium">{service}</p>
-                    <p className="text-2xl font-bold text-[#2a3747]">{count}</p>
+                    <p className="font-anton text-sm text-gray-600">{service}</p>
+                    <p className="font-anton text-2xl text-[#2a3747]">{count}</p>
                   </div>
                 </div>
               </motion.div>
@@ -198,7 +198,7 @@ const AdminDashboard: React.FC = () => {
                 placeholder="Search leads..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ffbe4a]"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ffbe4a] font-anton"
               />
             </div>
 
@@ -207,7 +207,7 @@ const AdminDashboard: React.FC = () => {
               <select
                 value={serviceFilter}
                 onChange={(e) => setServiceFilter(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ffbe4a] appearance-none"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ffbe4a] font-anton appearance-none"
               >
                 <option value="">All Services</option>
                 {services.map(service => (
@@ -222,14 +222,14 @@ const AdminDashboard: React.FC = () => {
                 type="date"
                 value={dateFilter}
                 onChange={(e) => setDateFilter(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ffbe4a]"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ffbe4a] font-anton"
               />
             </div>
 
             <CSVLink
               data={csvData}
               filename={`assistaura-leads-${new Date().toISOString().split('T')[0]}.csv`}
-              className="flex items-center justify-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#ffbe4a] to-[#2a3747] text-white rounded-lg hover:shadow-lg transition-shadow font-medium"
+              className="flex items-center justify-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#ffbe4a] to-[#2a3747] text-white rounded-lg hover:shadow-lg transition-shadow font-anton"
             >
               <Download className="w-4 h-4" />
               <span>Export CSV</span>
@@ -243,32 +243,32 @@ const AdminDashboard: React.FC = () => {
             <table className="w-full">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left font-medium text-sm text-[#2a3747] uppercase tracking-wider">Name</th>
-                  <th className="px-6 py-3 text-left font-medium text-sm text-[#2a3747] uppercase tracking-wider">Email</th>
-                  <th className="px-6 py-3 text-left font-medium text-sm text-[#2a3747] uppercase tracking-wider">Phone</th>
-                  <th className="px-6 py-3 text-left font-medium text-sm text-[#2a3747] uppercase tracking-wider">Service</th>
-                  <th className="px-6 py-3 text-left font-medium text-sm text-[#2a3747] uppercase tracking-wider">Date</th>
-                  <th className="px-6 py-3 text-left font-medium text-sm text-[#2a3747] uppercase tracking-wider">Actions</th>
+                  <th className="px-6 py-3 text-left font-anton text-sm text-[#2a3747] uppercase tracking-wider">Name</th>
+                  <th className="px-6 py-3 text-left font-anton text-sm text-[#2a3747] uppercase tracking-wider">Email</th>
+                  <th className="px-6 py-3 text-left font-anton text-sm text-[#2a3747] uppercase tracking-wider">Phone</th>
+                  <th className="px-6 py-3 text-left font-anton text-sm text-[#2a3747] uppercase tracking-wider">Service</th>
+                  <th className="px-6 py-3 text-left font-anton text-sm text-[#2a3747] uppercase tracking-wider">Date</th>
+                  <th className="px-6 py-3 text-left font-anton text-sm text-[#2a3747] uppercase tracking-wider">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {filteredLeads.map((lead) => (
                   <tr key={lead.id} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-[#2a3747]">{lead.name}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">{lead.email}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">{lead.phone}</td>
+                    <td className="px-6 py-4 whitespace-nowrap font-anton text-[#2a3747]">{lead.name}</td>
+                    <td className="px-6 py-4 whitespace-nowrap font-anton text-gray-600">{lead.email}</td>
+                    <td className="px-6 py-4 whitespace-nowrap font-anton text-gray-600">{lead.phone}</td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="px-2 py-1 bg-[#ffbe4a]/20 text-[#2a3747] rounded-full text-sm font-medium">
+                      <span className="px-2 py-1 bg-[#ffbe4a]/20 text-[#2a3747] rounded-full text-sm font-anton">
                         {lead.service}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-gray-600 text-sm">
+                    <td className="px-6 py-4 whitespace-nowrap font-anton text-gray-600 text-sm">
                       {formatDate(lead.created_at)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <button
                         onClick={() => setSelectedLead(lead)}
-                        className="flex items-center space-x-1 px-3 py-1 bg-[#2a3747] text-white rounded-lg hover:bg-[#2a3747]/80 transition-colors font-medium text-sm"
+                        className="flex items-center space-x-1 px-3 py-1 bg-[#2a3747] text-white rounded-lg hover:bg-[#2a3747]/80 transition-colors font-anton text-sm"
                       >
                         <Eye className="w-4 h-4" />
                         <span>View</span>
@@ -283,7 +283,7 @@ const AdminDashboard: React.FC = () => {
           {filteredLeads.length === 0 && (
             <div className="text-center py-12">
               <Users className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-500">No leads found</p>
+              <p className="font-anton text-gray-500">No leads found</p>
             </div>
           )}
         </div>
@@ -299,7 +299,7 @@ const AdminDashboard: React.FC = () => {
           >
             <div className="bg-gradient-to-r from-[#ffbe4a] to-[#2a3747] p-6">
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-white">Lead Details</h2>
+                <h2 className="font-anton text-2xl text-white">Lead Details</h2>
                 <button
                   onClick={() => setSelectedLead(null)}
                   className="text-white hover:text-white/80 transition-colors"
@@ -315,37 +315,37 @@ const AdminDashboard: React.FC = () => {
                 <div className="flex items-center space-x-3">
                   <Users className="w-5 h-5 text-[#ffbe4a]" />
                   <div>
-                    <p className="text-sm text-gray-600 font-medium">Name</p>
-                    <p className="text-[#2a3747] font-medium">{selectedLead.name}</p>
+                    <p className="font-anton text-sm text-gray-600">Name</p>
+                    <p className="font-anton text-[#2a3747]">{selectedLead.name}</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-[#ffbe4a]" />
                   <div>
-                    <p className="text-sm text-gray-600 font-medium">Email</p>
-                    <p className="text-[#2a3747]">{selectedLead.email}</p>
+                    <p className="font-anton text-sm text-gray-600">Email</p>
+                    <p className="font-anton text-[#2a3747]">{selectedLead.email}</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-[#ffbe4a]" />
                   <div>
-                    <p className="text-sm text-gray-600 font-medium">Phone</p>
-                    <p className="text-[#2a3747]">{selectedLead.phone}</p>
+                    <p className="font-anton text-sm text-gray-600">Phone</p>
+                    <p className="font-anton text-[#2a3747]">{selectedLead.phone}</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MessageSquare className="w-5 h-5 text-[#ffbe4a]" />
                   <div>
-                    <p className="text-sm text-gray-600 font-medium">Service</p>
-                    <p className="text-[#2a3747]">{selectedLead.service}</p>
+                    <p className="font-anton text-sm text-gray-600">Service</p>
+                    <p className="font-anton text-[#2a3747]">{selectedLead.service}</p>
                   </div>
                 </div>
               </div>
 
               {selectedLead.additional_message && (
                 <div className="mb-6">
-                  <p className="text-sm text-gray-600 font-medium mb-2">Additional Message</p>
-                  <p className="text-[#2a3747] bg-gray-50 p-3 rounded-lg">
+                  <p className="font-anton text-sm text-gray-600 mb-2">Additional Message</p>
+                  <p className="font-anton text-[#2a3747] bg-gray-50 p-3 rounded-lg">
                     {selectedLead.additional_message}
                   </p>
                 </div>
@@ -353,7 +353,7 @@ const AdminDashboard: React.FC = () => {
 
               {/* Chat History */}
               <div>
-                <h3 className="text-lg font-semibold text-[#2a3747] mb-4">Chat History</h3>
+                <h3 className="font-anton text-lg text-[#2a3747] mb-4">Chat History</h3>
                 <div className="space-y-3 max-h-60 overflow-y-auto">
                   {selectedLead.chat_history.map((message: ChatMessage) => (
                     <div
@@ -361,7 +361,7 @@ const AdminDashboard: React.FC = () => {
                       className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                     >
                       <div
-                        className={`max-w-xs px-4 py-2 rounded-2xl text-sm ${
+                        className={`max-w-xs px-4 py-2 rounded-2xl font-anton text-sm ${
                           message.role === 'user'
                             ? 'bg-[#ffbe4a] text-white'
                             : 'bg-gray-100 text-[#2a3747]'

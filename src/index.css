@@ -1,7 +1,5 @@
 /* Import Anton font */
 @import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap');
-/* Import Inter font for chatbot */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,10 +11,6 @@
 
 .font-anton {
   font-family: 'Anton', sans-serif;
-}
-
-.font-inter {
-  font-family: 'Inter', sans-serif;
 }
 
 /* Smooth scrolling */
