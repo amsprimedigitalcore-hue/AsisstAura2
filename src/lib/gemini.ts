@@ -68,7 +68,7 @@ You are AssistAura AI Assistant, representing AssistAura - a premium digital age
 
 export async function generateResponse(message: string, chatHistory: any[] = []) {
   try {
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' });
     
     const context = COMPANY_CONTEXT + '\n\nChat History:\n' + 
       chatHistory.map(msg => `${msg.role}: ${msg.content}`).join('\n') + 
