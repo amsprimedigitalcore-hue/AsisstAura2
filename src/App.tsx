@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoadingScreen from './components/LoadingScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ChatWidget from './components/Chatbot/ChatWidget';
 import Home from './pages/Home';
 import AmazonServices from './pages/services/AmazonServices';
 import ShopifyServices from './pages/services/ShopifyServices';
@@ -11,8 +10,6 @@ import MetaAds from './pages/services/MetaAds';
 import WebDevelopment from './pages/services/WebDevelopment';
 import CGIAds from './pages/services/CGIAds';
 import GraphicDesign from './pages/services/GraphicDesign';
-import AdminLogin from './pages/AdminLogin';
-import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -42,18 +39,9 @@ function App() {
             <Route path="/web-development" element={<WebDevelopment />} />
             <Route path="/cgi-ads" element={<CGIAds />} />
             <Route path="/graphic-design" element={<GraphicDesign />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
           </Routes>
         </main>
-        <Routes>
-          <Route path="/admin/*" element={null} />
-          <Route path="*" element={<Footer />} />
-        </Routes>
-        <Routes>
-          <Route path="/admin/*" element={null} />
-          <Route path="*" element={<ChatWidget />} />
-        </Routes>
+        <Footer />
       </div>
     </Router>
   );
