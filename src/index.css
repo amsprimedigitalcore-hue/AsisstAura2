@@ -1,11 +1,9 @@
-/* Import Inter font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-/* Import Anton font */
-@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Import Anton font */
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap');
 
 * {
   font-family: 'Anton', sans-serif;
@@ -15,9 +13,6 @@
   font-family: 'Anton', sans-serif;
 }
 
-.font-inter {
-  font-family: 'Inter', sans-serif;
-}
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

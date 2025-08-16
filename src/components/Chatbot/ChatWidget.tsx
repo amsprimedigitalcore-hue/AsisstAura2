@@ -19,7 +19,7 @@ const ChatWidget: React.FC = () => {
     {
       id: '1',
       role: 'assistant',
-      content: "Hello! I'm AssistAura's AI Assistant. How can I help?",
+      content: "Hello! I'm AssistAura Assistant. How can I help you today?",
       timestamp: new Date().toISOString()
     }
   ]);
@@ -116,11 +116,8 @@ const ChatWidget: React.FC = () => {
 
       // Check if the response suggests collecting lead information
       const lowerResponse = response.toLowerCase();
-      const lowerMessage = userMessage.toLowerCase();
       if (lowerResponse.includes('contact') || lowerResponse.includes('information') || 
-          lowerResponse.includes('details') || lowerMessage.includes('interested') ||
-          lowerMessage.includes('quote') || lowerMessage.includes('price') ||
-          lowerMessage.includes('cost') || lowerMessage.includes('hire')) {
+          lowerResponse.includes('details') || userMessage.toLowerCase().includes('interested')) {
         setTimeout(() => {
           addMessage('assistant', 'I\'d be happy to help you get started! Let me collect some information so our team can assist you better.');
           setTimeout(() => {
@@ -175,7 +172,7 @@ const ChatWidget: React.FC = () => {
               height: isMinimized ? 60 : 500 
             }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            className="fixed bottom-6 right-6 w-80 bg-white rounded-2xl shadow-2xl z-50 overflow-hidden border border-gray-200 font-inter"
+            className="fixed bottom-6 right-6 w-80 bg-white rounded-2xl shadow-2xl z-50 overflow-hidden border border-gray-200"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-[#ffbe4a] to-[#2a3747] p-4 flex items-center justify-between">
@@ -184,7 +181,7 @@ const ChatWidget: React.FC = () => {
                   <MessageCircle className="w-5 h-5 text-[#2a3747]" />
                 </div>
                 <div>
-                  <h3 className="text-white text-sm font-semibold">AssistAura AI Assistant</h3>
+                  <h3 className="font-anton text-white text-sm">AssistAura AI Assistant</h3>
                   <p className="text-white/80 text-xs">Online now</p>
                 </div>
               </div>
@@ -214,7 +211,7 @@ const ChatWidget: React.FC = () => {
                       className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                     >
                       <div
-                        className={`max-w-xs px-4 py-2 rounded-2xl text-sm ${
+                        className={`max-w-xs px-4 py-2 rounded-2xl font-anton text-sm ${
                           message.role === 'user'
                             ? 'bg-[#ffbe4a] text-white'
                             : 'bg-gray-100 text-[#2a3747]'
@@ -226,14 +223,11 @@ const ChatWidget: React.FC = () => {
                   ))}
                   {isLoading && (
                     <div className="flex justify-start">
-                      <div className="bg-gray-100 text-[#2a3747] px-4 py-2 rounded-2xl text-sm">
-                        <div className="flex items-center space-x-2">
-                          <div className="flex space-x-1">
-                            <div className="w-2 h-2 bg-[#2a3747] rounded-full animate-bounce"></div>
-                            <div className="w-2 h-2 bg-[#2a3747] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                            <div className="w-2 h-2 bg-[#2a3747] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                          </div>
-                          <span className="text-xs text-gray-500">typing...</span>
+                      <div className="bg-gray-100 text-[#2a3747] px-4 py-2 rounded-2xl font-anton text-sm">
+                        <div className="flex space-x-1">
+                          <div className="w-2 h-2 bg-[#2a3747] rounded-full animate-bounce"></div>
+                          <div className="w-2 h-2 bg-[#2a3747] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                          <div className="w-2 h-2 bg-[#2a3747] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                         </div>
                       </div>
                     </div>
@@ -250,7 +244,7 @@ const ChatWidget: React.FC = () => {
                       onChange={(e) => setInputMessage(e.target.value)}
                       onKeyPress={handleKeyPress}
                       placeholder="Type your message..."
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#ffbe4a] text-sm"
+                      className="flex-1 px-3 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#ffbe4a] font-anton text-sm"
                       disabled={isLoading}
                     />
                     <button
